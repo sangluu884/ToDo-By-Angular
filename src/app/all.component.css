@@ -1,0 +1,30 @@
+.container{
+	max-width:50%;
+}
+.header{
+	
+}
+.section{
+	
+}
+.footer{
+	
+}
+.footer1{
+	float:left;
+}
+.footer2{
+	float:left;
+	margin-left:110px;
+}
+.footer2 a{
+	padding-left:25px;
+}
+.footer3{
+	float:right;
+}
+.footer3 button{
+	height:20px;
+	font-size:12px;
+	padding-top:1px;
+}

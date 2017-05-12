@@ -1,0 +1,55 @@
+<h1 style="text-align:center;">TO DO</h1>
+
+<div class="container">
+	<div class="header">
+		<div class="input-group input-group-lg">
+		  <span class="input-group-addon">
+			<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+		  </span>
+		  <input type="text" class="form-control"
+					style="font-family: 'Comic Sans MS', cursive; text-align:center;"		
+						placeholder="What needs to be done?"
+							#task (keyup.enter)="addTask(task.value); task.value='' ">
+		</div>
+	</div>
+	
+	<div class="section">
+		<div class="row" *ngFor="let task of tasks">
+			<div class="col-lg-12">
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon">
+						<input type="checkbox"
+								style="width: 18px;padding-left: 19px;"
+									#tick="ngModel" [(ngModel)]="task.status" (ngModelChange)="saveTask(task);">
+					</span>
+					<label class="form-control"
+							style="font-family: 'Comic Sans MS', cursive;">{{task.name}}</label>
+					<span class="input-group-btn">
+						<button class="btn btn-default glyphicon glyphicon-remove" type="button"
+							(click)="deleteTask(task); $event.stopPropagation()"></button>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="footer1">
+					<!-- <span><strong>{{tasks.length}}</strong>left</span> -->
+				</div>
+			
+				<div class="footer2">
+					<a routerLink="/all">All</a>
+					<a routerLink="/active">Active</a>
+					<a routerLink="/completed">Completed</a>
+				</div>
+					
+				<div class="footer3">
+					<button class="btn btn-default" (click)="deleteOrder()">Clear all completed</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
